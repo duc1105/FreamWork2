@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const AddCategory = () => {
+  const handleSubmit = () => {};
   return (
     <div>
       <section id="content">
@@ -33,7 +34,7 @@ const AddCategory = () => {
           </div>
           <hr />
           <div className="form">
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="d-flex align-items-center mb-3 pb-1">
                 <i className="fas fa-cubes fa-2x me-3"></i>
               </div>

@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../../assets/css/login.css";
+import { getAllCate } from "../../../api/category";
 const AddProduct = () => {
+  const [categories, setCategory] = useState([]);
+  useEffect(() => {
+    getAllCate().then((data) => setCategory(data));
+  });
   return (
     <div>
       <section id="content">
@@ -114,7 +119,6 @@ const AddProduct = () => {
                   name="categoryId"
                   className="form-control form-control-lg"
                   id="form2Example17"
-        
                 >
                   <option value="">1</option>
                   <option value="">2</option>

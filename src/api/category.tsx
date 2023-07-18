@@ -1,7 +1,7 @@
 import instance from "./instance";
 const getAllCate = async () => {
   const res = await instance.get(`/categories`);
-  return res;
+  return res.data;
 };
 const getCate = async (id: string) => {
   const res = await instance.get(`/categories/${id}`);
