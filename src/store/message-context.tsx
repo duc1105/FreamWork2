@@ -8,7 +8,10 @@ type Props = {
 export const MessageContext = createContext({} as any);
 
 export default function MessageProvider({ children }: Props) {
-  const [message, setMessage] = useState(null);
+  // console.log(children);
+
+  const [message, setMessage] = useState<any>(null);
+  // console.log(message);
 
   return (
     <MessageContext.Provider value={{ message, setMessage }}>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import "../assets/css/admin/dashboard.css";
 import MessageProvider from "../store/message-context";
+
 const AdminLayout = () => {
   return (
     <MessageProvider>
@@ -79,7 +80,7 @@ const AdminLayout = () => {
               <span className="num">8</span>
             </Link>
             <Link to="#" className="profile">
-              <img src="../../../../assets/images/people.png" />
+              <img src="/src/assets/images/people.png" />
             </Link>
           </nav>
         </section>

@@ -12,7 +12,7 @@ const addCate = async (category: any) => {
   return res;
 };
 const updateCate = async (category: any) => {
-  const res = await instance.get(
+  const res = await instance.patch(
     `/categories/update/${category._id}`,
     category
   );

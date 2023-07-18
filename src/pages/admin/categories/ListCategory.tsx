@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { removeCate } from "../../../api/category";
+// import { removeCate } from "../../../api/category";
 const ListCategory = (props: any) => {
   const [categories, setCategory] = useState([]);
   useEffect(() => {
@@ -10,14 +10,7 @@ const ListCategory = (props: any) => {
 
   // console.log(props.products);
   const removeCategory = (id: number | string) => {
-    const conf = window.confirm("Bạn có chắc muốn xóa không ?");
-    const newCate = categories.filter((category: any) => category._id !== id);
-
-    if (conf) {
-      removeCate(String(id))
-        .then(() => setCategory(newCate))
-        .then(() => alert("Xóa thành công"));
-    }
+    props.handleRemove(id);
   };
   return (
     <div>
@@ -67,7 +60,7 @@ const ListCategory = (props: any) => {
                 </tr>
               </thead>
               <tbody>
-                {categories.map((category: any, index) => {
+                {categories?.map((category: any, index) => {
                   return (
                     <tr key={category._id}>
                       <td>{index + 1}</td>
