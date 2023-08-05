@@ -1,6 +1,18 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { Button, Checkbox, Form, Input, message } from "antd";
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const logout = async () => {
+    localStorage.clear();
+    await message.loading({
+      content: "loading...",
+      duration: 2,
+    });
+
+    navigate("/");
+  };
   return (
     <section id="sidebar">
       <Link to="/admin" className="brand">
@@ -46,7 +58,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <a className="logout">
+          <a className="logout" onClick={() => logout()}>
             <i className="bx bxs-log-out-circle"></i>
             <span className="text">Logout</span>
           </a>

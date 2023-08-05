@@ -25,6 +25,8 @@ import UpdateCategory from "./pages/admin/categories/UpdateCategory";
 import ProductDetail from "./pages/client/products/ProductDetail";
 import { add, getAll, remove, update } from "./api/product";
 import { addCate, getAllCate, removeCate, updateCate } from "./api/category";
+import ForgotPassWord from "./pages/client/ForgotPassword";
+import ResetPassword from "./pages/client/ResetPassword";
 // import "./App.css";
 
 function App() {
@@ -142,6 +144,8 @@ function App() {
     { path: "*", element: <NotFound /> },
     { path: "/login", element: <Login /> },
     { path: "/register", element: <Register /> },
+    { path: "/forgot-password", element: <ForgotPassWord /> },
+    { path: "/reset-password/:id", element: <ResetPassword /> },
   ]);
   return <RouterProvider router={router} />;
 }

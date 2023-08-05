@@ -14,7 +14,7 @@ const login = async (user: any) => {
   const res = await instance.post(`/signin`, user);
   return res;
 };
-const register = async (user: any) => {
+const registerUser = async (user: any) => {
   const res = await instance.post(`/signup`, user);
   return res;
 };
@@ -26,8 +26,8 @@ const removeUser = async (id: string) => {
   const res = await instance.delete(`/users/${id}`);
   return res;
 };
-const forgotPassword = async (user: any) => {
-  const res = await instance.post(`/forgot-password}`, user);
+const forgotPassword = async (email: any) => {
+  const res = await instance.post(`/forgot-password`, email);
   return res;
 };
 const resetPassword = async (user: any) => {
@@ -42,5 +42,5 @@ export {
   login,
   resetPassword,
   forgotPassword,
-  register,
+  registerUser,
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const Header = () => {
+  const user = localStorage.getItem("user");
   return (
     <div>
       <header className="header">
