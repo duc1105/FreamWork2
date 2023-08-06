@@ -1,7 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Header = () => {
-  const user = localStorage.getItem("user");
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user") as string);
+  console.log(user);
+
   return (
     <div>
       <header className="header">
@@ -46,9 +49,16 @@ const Header = () => {
             <Link to="#">
               <i className="header-icon bx bx-search"></i>
             </Link>
-            <Link to="/login">
-              <i className=" header-icon bx bxs-user"></i>
-            </Link>
+            {user ? (
+              <Link to="/customer">
+                <i className=" header-icon bx bxs-user"></i>
+              </Link>
+            ) : (
+              <Link to="/login">
+                <i className=" header-icon bx bxs-user"></i>
+              </Link>
+            )}
+
             <Link to="#">
               <i className="header-icon bx bxs-shopping-bag"></i>
             </Link>

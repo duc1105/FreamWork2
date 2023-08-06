@@ -10,7 +10,7 @@ const Sidebar = () => {
       content: "loading...",
       duration: 2,
     });
-
+    message.success("Đăng xuất thành công");
     navigate("/");
   };
   return (

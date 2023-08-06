@@ -1,5 +1,5 @@
 import instance from "./instance";
-
+import { useState, useEffect } from "react";
 const getAllCart = async () => {
   const res = await instance.get(`/carts`);
   return res;
@@ -23,4 +23,8 @@ const getCartByUser = async (user: any) => {
   const res = await instance.get(`/carts/user/${user._id}`);
   return res;
 };
-export { getAllCart, getOneCart, addCart, updateCart, getCartByUser };
+const remove = async (id: any) => {
+  const res = await instance.delete(`/carts/${id}`);
+  return res;
+};
+export { getAllCart, getOneCart, addCart, updateCart, getCartByUser, remove };
