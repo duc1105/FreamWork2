@@ -49,6 +49,12 @@ const Sidebar = () => {
             <span className="text">User</span>
           </Link>
         </li>
+        <li>
+          <Link to="/admin/carts" className="menu-link">
+            <i className="bx bxs-group"></i>
+            <span className="text">Cart</span>
+          </Link>
+        </li>
       </ul>
       <ul className="side-menu">
         <li>

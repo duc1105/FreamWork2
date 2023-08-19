@@ -68,9 +68,11 @@ const ProductDetail = () => {
       });
       if (loading) {
         const response: any = await addCart(data1);
+        console.log(response);
 
+        localStorage.setItem("cart", JSON.stringify(response.data));
         if (response) message.success("successfully add cart", 3);
-        navigate("/cart");
+        // navigate("/cart");
       }
     } catch (error: any) {
       message.error(error.response.data.message, 5);

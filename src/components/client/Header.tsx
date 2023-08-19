@@ -11,7 +11,7 @@ const Header = () => {
         <div className="header-top">
           <div className="header-logo">
             <Link to="#" className="logo">
-              DuyDepTrai
+              Duc
             </Link>
           </div>
 

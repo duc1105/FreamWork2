@@ -133,7 +133,7 @@ const Cart = () => {
                 <strong>Tổng tiền 4000 đ</strong>
               </td>
               <td>
-                <Link to="/paynow" className="btn btn-success btn-block">
+                <Link to="/pay" className="btn btn-success btn-block">
                   pay now<i className="fa fa-angle-right"></i>
                 </Link>
               </td>
